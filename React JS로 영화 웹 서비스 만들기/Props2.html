@@ -1,0 +1,47 @@
+<!-- prop받는 연습하기 -->
+
+
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  
+  <!-- react -->
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <!-- react-dom -->
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <!-- babel -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">   
+
+    // prop받는 기본 타입
+    function Btn(props) {
+      return (
+        <button 
+          style={{
+            backgroundColor: "tomato",
+            color:'white',
+            padding: '10px 20px',
+            border:0,
+            borderRadius:10,
+            fontSize: props.fontSize,
+          }}>
+            {props.text}
+        </button>
+      );
+    };
+
+    function App () {
+      return (
+        <div>
+          <Btn text="Save Changes" fontSize={18} />
+          <Btn text={"Continue"} fontSize={12} />
+        </div>
+      );
+    };
+    const root = document.getElementById("root");  
+    ReactDOM.render(<App />, root);
+  </script>
+</html>
+
